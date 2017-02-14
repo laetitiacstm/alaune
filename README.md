@@ -12,6 +12,10 @@ Le service pourra se décliner de différentes manières, comme par exemple:
 * Visualisation graphique des mots fréquents dans les unes de grands quotidiens
   * Partant d'une visualisation à l'aide d'un word cloud, par exemple, on peut imaginer cliquer sur un mot pour être renvoyé vers les unes relatives à ce mot.
 
+## Quelle URL
+
+Pour l'instant, il n'ets pas prévu de déployer ce service sur un serveur public (il faudrait avoir les droits de redistribuer les unes ...). Ce projet est avant tout un exercice académique. Le serveur peut être déployé localement (`localhost:5000`) sur le port 5000 défaut `flask`).
+
 ## Crédits
 
 Ce projet est effectué par les étudiants du CMI ISI (Université de Bordeaux); promotion 2016-2017 (semestre janvier-mai)
