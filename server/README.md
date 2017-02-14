@@ -1,6 +1,6 @@
 # Serveur
 
-Le serveur est développé à l'aide du [framework python flask](http://flask.pocoo.org/). Le serveur sert donc des *routes* (des URLs)
+Le serveur est développé à l'aide du [`framework python flask`](http://flask.pocoo.org/). Le serveur sert donc des *routes* (des URLs)
 
 Chaque route  est servie par une fonction dédiée. La fonction ets liée à l'URL et invoquée en utlisant le mécanisme de surcharge "@" de python.
 
