@@ -14,7 +14,7 @@ Le service pourra se décliner de différentes manières, comme par exemple:
 
 ## Quelle URL
 
-Pour l'instant, il n'ets pas prévu de déployer ce service sur un serveur public (il faudrait avoir les droits de redistribuer les unes ...). Ce projet est avant tout un exercice académique. Le serveur peut être déployé localement (`localhost:5000`) sur le port 5000 défaut `flask`).
+Pour l'instant, il n'ets pas prévu de déployer ce service sur un serveur public (il faudrait avoir les droits de redistribuer les unes ...). Ce projet est avant tout un exercice académique. Le serveur peut être déployé localement sur le port 5000 défaut `flask`). Il suffit de lancer le script du serveur et de se connecter via un navigateur (`localhost:5000`).
 
 ## Crédits
 
