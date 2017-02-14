@@ -11,3 +11,13 @@ Le service pourra se décliner de différentes manières, comme par exemple:
 
 * Visualisation graphique des mots fréquents dans les unes de grands quotidiens
   * Partant d'une visualisation à l'aide d'un word cloud, par exemple, on peut imaginer cliquer sur un mot pour être renvoyé vers les unes relatives à ce mot.
+
+## Crédits
+
+Ce projet est effectué par les étudiants du CMI ISI (Université de Bordeaux); promotion 2016-2017 (semestre janvier-mai)
+
+* Laetitia Costemale
+* Mehdi Fellat
+* Estelle Preuilh
+* Laura Tilleul
+* Nicolas Vendrick
