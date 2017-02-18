@@ -3,7 +3,7 @@
 #Commentaire de Laura
 from flask import Flask, request
 
-import CourrierInternational, LePoint, JournalduNet, latribune, lesechos
+import CourrierInternational, LePoint, JournalduNet, latribune, lesechos, LeDauphine, LaTribune1
 
 app = Flask('A la une')
 
@@ -22,6 +22,7 @@ def index():
 	page_content += '<option value="courrier">Courrier International</option>'
 	page_content += '<option value="lesechos">Les Echos</option>'
 	page_content += '<option value="latribune">La Tribune</option>'
+	page_content += '<option value="ledauphine"> Le Dauphiné Libéré </option>'
 	page_content += '</select>'
 
 	page_content += '<input type="submit" value="Envoyer"></input>'
@@ -42,15 +43,19 @@ def quel_journal():
 	elif journal == 'lejournaldunet':
 		targetURL = 'http://www.lejournaldunet.fr'
 		titres = JournalduNet.unes(targetURL)
-		return htmlize2(titres, targetURL)
+		return htmlize2(titres)
 	elif journal == 'lesechos':
 		targetURL = 'http://www.lesechos.fr/'
 		titres = lesechos.unes(targetURL)
-		return htmlize2(titres, targetURL)
+		return htmlize2(titres)
 	elif journal == 'latribune':
 		targetURL = 'http://www.latribune.fr/'
-		titres = latribune.unes(targetURL)
-		return htmlize2(titres, targetURL)
+		titres = LaTribune1.unes(targetURL)
+		return htmlize2(titres)
+	elif journal == 'ledauphine' :
+                targetURL= 'http://ledauphine.com'
+                titres=LeDauphine.unes(targetURL)
+                return htmlize(titres,targetURL)
 	else:
 		return journal
 
@@ -62,7 +67,8 @@ def htmlize(titles_and_href, targetURL):
 	return html
 
 #### htmlize2 à la même fonction que htmlize mais sans répétition de targetURL
-def htmlize2(titles_and_href, targetURL):
+# du coup ça sert à rien de garder le paramètre targetURL, je le vire /Laura
+def htmlize2(titles_and_href):
 	html = ''
 	for item in titles_and_href:
 		html += '<h2>'
