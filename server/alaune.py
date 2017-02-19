@@ -3,11 +3,8 @@
 #Commentaire de Laura
 from flask import Flask, request
 
-<<<<<<< HEAD
-import CourrierInternational, LePoint, JournalduNet, latribune, lesechos, LeDauphine, LaTribune1, lemonde, ouestfrance
-=======
-import CourrierInternational, LePoint, JournalduNet, lesechos, LeDauphine, LaTribune1, sudouest, LeFigaro
->>>>>>> origin/master
+
+import CourrierInternational, LePoint, JournalduNet, lesechos, LeDauphine, LaTribune1, sudouest, LeFigaro, LeParisien, _20minutes, lemonde, ouestfrance
 
 app = Flask('A la une')
 
@@ -27,11 +24,11 @@ def index():
 	page_content += '<option value="lesechos">Les Echos</option>'
 	page_content += '<option value="latribune">La Tribune</option>'
 	page_content += '<option value="ledauphine"> Le Dauphiné Libéré </option>'
-<<<<<<< HEAD
     page_content += '<option value="ouestfrance">Ouest France</option>'
-=======
 	page_content += '<option value="sudouest"> Le Sud Ouest </option>'
->>>>>>> origin/master
+	page_content += '<option value="leparisien">Le Parisien</option>'
+	page_content += '<option value="20min">20 minutes</option>'
+
 	page_content += '</select>'
 
 	page_content += '<input type="submit" value="Envoyer"></input>'
@@ -61,8 +58,7 @@ def quel_journal():
 		targetURL = 'http://www.latribune.fr/'
 		titres = LaTribune1.unes(targetURL)
 		return htmlize2(titres)
-	elif journal == 'ledauphine' :
-<<<<<<< HEAD
+	elif journal == 'ledauphine':
         targetURL= 'http://ledauphine.com'
         titres=LeDauphine.unes(targetURL)
         return htmlize(titres,targetURL)
@@ -74,10 +70,6 @@ def quel_journal():
         targetURL = 'http://www.ouest-france.fr'
         titres=ouestfrance.unes(targetURL)
         return htmlize(titres, targetURL)
-=======
-		targetURL= 'http://ledauphine.com'
-		titres=LeDauphine.unes(targetURL)
-		return htmlize(titres,targetURL)
 	elif journal == 'sudouest' :
 		targetURL= 'http://www.sudouest.fr/'
 		titres=sudouest.unes(targetURL)
@@ -86,8 +78,16 @@ def quel_journal():
 		targetURL= 'http://www.lefigaro.fr/'
 		titres=LeFigaro.unes(targetURL)
 		return htmlize2(titres)
+	elif journal=='leparisien':
+		targetURL='http://www.leparisien.fr'
+		titres=LeParisien.unes(targetURL)
+		return htmlize2(titres)
+	elif journal=='20min':
+		targetURL='http://www.20minutes.fr'
+		titres=_20minutes.unes(targetURL)
+		return htmlize(titres,targetURL) 
         
->>>>>>> origin/master
+
 	else:
 		return journal
 
