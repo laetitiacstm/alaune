@@ -3,7 +3,7 @@
 #Commentaire de Laura
 from flask import Flask, request
 
-import CourrierInternational, LePoint, JournalduNet, latribune, lesechos, LeDauphine, LaTribune1
+import CourrierInternational, LePoint, JournalduNet, latribune, lesechos, LeDauphine, LaTribune1, lemonde, ouestfrance
 
 app = Flask('A la une')
 
@@ -23,6 +23,7 @@ def index():
 	page_content += '<option value="lesechos">Les Echos</option>'
 	page_content += '<option value="latribune">La Tribune</option>'
 	page_content += '<option value="ledauphine"> Le Dauphiné Libéré </option>'
+    page_content += '<option value="ouestfrance">Ouest France</option>'
 	page_content += '</select>'
 
 	page_content += '<input type="submit" value="Envoyer"></input>'
@@ -53,9 +54,17 @@ def quel_journal():
 		titres = LaTribune1.unes(targetURL)
 		return htmlize2(titres)
 	elif journal == 'ledauphine' :
-                targetURL= 'http://ledauphine.com'
-                titres=LeDauphine.unes(targetURL)
-                return htmlize(titres,targetURL)
+        targetURL= 'http://ledauphine.com'
+        titres=LeDauphine.unes(targetURL)
+        return htmlize(titres,targetURL)
+    elif journal == 'lemonde':
+        targetURL = 'http://www.lemonde.fr'
+        titres= lemonde.unes(targetURL)
+        return htmlize(titres, targetURL)
+    elif journal == 'ouestfrance':
+        targetURL = 'http://www.ouest-france.fr'
+        titres=ouestfrance.unes(targetURL)
+        return htmlize(titres, targetURL)
 	else:
 		return journal
 

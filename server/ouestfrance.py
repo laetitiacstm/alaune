@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import urllib, lxml.html
@@ -9,9 +9,9 @@ def unes(targetURL):
     file.close()
     
     doc = lxml.html.document_fromstring(data)
-    article_href = doc.xpath('//article[contains(@class, "titre_une")]/a/@href')
+    article_href = doc.xpath('//article[@data-vr-contentbox]/a/@href')
     
     doc=lxml.html.document_fromstring(data)
-    articles_titles = doc.xpath('//h1[contains(@class, "tt3 ")]/text()')
-
+    articles_titles = doc.xpath('//article[@data-vr-contentbox]//h2[@class="title "]/text()')
+    
     return zip(article_titles, articles_href)
