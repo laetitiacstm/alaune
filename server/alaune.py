@@ -24,7 +24,7 @@ def index():
 	page_content += '<option value="lesechos">Les Echos</option>'
 	page_content += '<option value="latribune">La Tribune</option>'
 	page_content += '<option value="ledauphine"> Le Dauphiné Libéré </option>'
-    page_content += '<option value="ouestfrance">Ouest France</option>'
+	page_content += '<option value="ouestfrance">Ouest France</option>'
 	page_content += '<option value="sudouest"> Le Sud Ouest </option>'
 	page_content += '<option value="leparisien">Le Parisien</option>'
 	page_content += '<option value="20min">20 minutes</option>'
