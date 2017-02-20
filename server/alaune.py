@@ -4,7 +4,7 @@
 from flask import Flask, request
 
 
-import CourrierInternational, LePoint, JournalduNet, lesechos, LeDauphine, LaTribune1, sudouest, LeFigaro, LeParisien, _20minutes, lemonde, ouestfrance
+import CourrierInternational, LePoint, JournalduNet, LesEchos, LeDauphine, LaTribune, SudOuest, LeFigaro, LeParisien, _20minutes, LeMonde, OuestFrance
 
 app = Flask('A la une')
 
