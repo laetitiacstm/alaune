@@ -60,8 +60,8 @@ def unes_avant():
 
 @app.route('/apres_1er_tour')
 def unes_apres():
-        count1=modele_donnees.count_unes_avant('Macron')
-        count2=modele_donnees.count_unes_avant('Le Pen')
+        count1=modele_donnees.count_unes_apres('Macron')
+        count2=modele_donnees.count_unes_apres('Le Pen')
         return render_template('apres.html' ,quantite1=count1, quantite2=count2)
 
 

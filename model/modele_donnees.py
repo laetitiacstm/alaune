@@ -79,7 +79,7 @@ def count_unes_avant(nom):
     return count
 
 def count_unes_apres(nom):
-    cursor.execute("SELECT titre FROM unes WHERE titre LIKE '%"+nom+"%'  AND date>#2017-04-23#")
+    cursor.execute("SELECT titre FROM unes WHERE titre LIKE '%"+nom+"%'  AND date>'2017-04-23'")
     count = 0
     for row in cursor :
         count+=1
