@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<title > A la une présidentielle !</title>
+		<script src="http://d3js.org/d3.v4.min.js"></script>
+		<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+		<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" /> 
+	</head>
+	<body>
+	<h1> A la une présidentielle!</h1>
+	
+	<nav > 
+		<ul id="menu">
+			<li > <a href="../" >Accueil </a></li>
+			<li><a href="../avant_1er_tour" > Avant le 1er tour </a></li>
+			<li><a href="../apres_1er_tour" >Après le 1er tour </a></li>
+			<li class="active"> <a href="#"> Journaux </a></li>
+			
+		</ul>
+			
+	</nav>
+	
+	<h2> Voici toutes les unes du jour  de {{quantite}} </h2>
+	
+	</body>
+	</html>

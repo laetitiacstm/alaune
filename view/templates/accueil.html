@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<title > A la une présidentielle !</title>
+		<script src="http://d3js.org/d3.v4.min.js"></script>
+		<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+		<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" /> 
+	</head>
+	<body>
+	<h1> A la une présidentielle!</h1>
+	
+	<nav > 
+		<ul id="menu">
+			<li class="active"> <a href="#" >Accueil </a></li>
+			<li><a href="/avant_1er_tour" > Avant le 1er tour </a></li>
+			<li><a href="/apres_1er_tour" >Après le 1er tour </a></li>
+			<li> <a href="/journaux"> Journaux </a></li>
+			
+		</ul>
+			
+	</nav>
+		<br/>
+		<br/> 
+		<div >
+		<img src="../../static/candidats.jpg" />
+		<figcaption > Les cinq candidats principaux. </figcaption>
+		<br/>
+		<br/>
+		<br/>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var svg = dimple.newSvg("body", 650, 350);
+			var data = [
+			  { "Candidats à l'élection présidentielle":"Macron", "Nombre d'articles":{{ quantite1 }} },
+			  { "Candidats à l'élection présidentielle":"Mélenchon", "Nombre d'articles":{{quantite2}} },
+			  { "Candidats à l'élection présidentielle":"Le Pen", "Nombre d'articles":{{quantite3}} },
+			  { "Candidats à l'élection présidentielle":"Hamon", "Nombre d'articles":{{quantite4}} },
+			  { "Candidats à l'élection présidentielle":"Fillon", "Nombre d'articles":{{ quantite5}} }
+			];
+			
+			var chart = new dimple.chart(svg, data);
+			chart.addCategoryAxis("x", "Candidats à l'élection présidentielle");
+			chart.addMeasureAxis("y", "Nombre d'articles");
+			chart.addSeries(null, dimple.plot.bar);
+			chart.draw();
+			
+			  svg.selectAll("title_text")
+                  .data(["Nombre d'articles pour les 5 principaux candidats depuis le 2 avril 2017"])
+                  .enter()
+                  .append("text")
+                  .attr("x", 70)
+                  .attr("y", 20 )
+                  .style("font-family", "sans-serif")
+                  .style("font-size", "15px")
+                  .style("color", "Black")
+				  .style("font-style","italic")
+                  .text(function (d) { return d; });
+			
+			svg.selectAll("rect")
+			
+		    .on("click", onclick);
+		    
+function onclick() {
+		
+		var url = '/click/'+ this.id;
+		window.location = url;
+}
+				  
+		
+			
+				  
+		</script>
+		<p> Ce graphe est interactif, vous pouvez cliquez dessus pour voir les unes correspondantes à chaque candidat. </p>
+		
+		</body>
+</html>
+

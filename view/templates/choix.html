@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<title > A la une présidentielle !</title>
+		<script src="http://d3js.org/d3.v4.min.js"></script>
+		<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+		<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" /> 
+	</head>
+	<body>
+	<h1> A la une présidentielle!</h1>
+	
+	<nav > 
+		<ul id="menu">
+			<li > <a href="../" >Accueil </a></li>
+			<li><a href="../avant_1er_tour" > Avant le 1er tour </a></li>
+			<li><a href="../apres_1er_tour" >Après le 1er tour </a></li>
+			<li class="active"> <a href="#"> Journaux </a></li>
+			
+		</ul>
+			
+	</nav>
+	
+	<br/>
+	<br/>
+	
+	<div class ="choix">
+        <form action="/journal" method="post">
+		<label for="journal">Choisissez votre journal:</label>
+		<br/>
+        <select name="journal">
+		
+		<option value="20 minutes">20 minutes</option>
+		<option value="Courrier International">Courrier International</option>
+		<option value="La Tribune">La Tribune</option>
+		<option value="Le Dauphiné Libéré"> Le Dauphiné Libéré </option>
+		<option value="Le Figaro">Le Figaro</option>
+        <option value="Le Journal du Net">Le Journal du Net</option>
+		<option value="Le Parisien">Le Parisien</option>
+        <option value="Le Point">Le Point</option>
+        <option value="Les Echos">Les Echos</option>
+        <option value="Sud Ouest"> Sud Ouest </option>
+
+        </select>
+
+        <input type="submit" value="Envoyer"></input>
+        </form>
+		
+		<br/>
+		<br/>
+		<br/>
+		<img src="../../static/journal.jpg"/>
+		
+		<br/>
+		
+		</div>
+		
+		
+	</body>
+</html>
+

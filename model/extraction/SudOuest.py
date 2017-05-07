@@ -1,9 +1,8 @@
 # -*- coding:utf-8 -*-
  
 import urllib, lxml.html
- 
-# targetURL = 'http://www.sudouest.fr/'
-# passe en parametre depuis le script de la requete
+import methode_extraction
+
  
 def unes(targetURL):
 	file = urllib.urlopen("http://www.sudouest.fr/")
@@ -17,4 +16,7 @@ def unes(targetURL):
 	doc = lxml.html.document_fromstring(data)
 	article_titles = doc.xpath('//section[@class="articles essentiel "]//div[@class="article-wrapper"]/a/h2/text()') + doc.xpath('//section[@class="articles default "]//div[@class="article-wrapper"]/a/h2/text()')
  
-	return zip(article_titles, articles_href)
+	titres= zip(article_titles, articles_href)
+	quotidien={'nom':'Sud Ouest', 'URL':targetURL}
+	methode_extraction.extraction (targetURL, quotidien,titres)
+                

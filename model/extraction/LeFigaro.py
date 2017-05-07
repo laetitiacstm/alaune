@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
  
 import urllib, lxml.html
- 
+import methode_extraction
+
  
 def unes(targetURL):
 	file = urllib.urlopen(targetURL)
@@ -13,4 +14,7 @@ def unes(targetURL):
 	doc = lxml.html.document_fromstring(data)
 	article_titles = doc.xpath('//h1[@class="fig-profil-headline"]/a/text()') + doc.xpath('//section[contains(@class, "fig-profil ")]/div/h2/a/text()')
 	
-	return zip(article_titles, articles_href)
+	titres= zip(article_titles, articles_href)
+	quotidien={'nom':'Le Figaro', 'URL':targetURL}
+	methode_extraction.extraction ('', quotidien,titres)
+	

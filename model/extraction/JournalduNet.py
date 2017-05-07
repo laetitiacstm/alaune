@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
  
 import urllib, lxml.html
+import methode_extraction
+
  
  
 def unes(targetURL):
@@ -13,4 +15,7 @@ def unes(targetURL):
 	doc = lxml.html.document_fromstring(data)
 	article_titles = doc.xpath('//h2[@class="app_title"]/a/text()')
 	
-	return zip(article_titles, articles_href)
+	titres= zip(article_titles, articles_href)
+	quotidien={'nom':'Le Journal du Net', 'URL':targetURL}
+	methode_extraction.extraction ('', quotidien,titres)
+	
